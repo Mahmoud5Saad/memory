@@ -163,18 +163,12 @@ return src;
 
 int32_t * reserve_words(size_t length) {
 	
-	int32_t * reserved = (int32_t *) malloc(sizeof(char)*length);
-	
+	int32_t * reserved;
 
-	if (reserved == NULL)
-	{
-		return   NULL ;
-	}
-	
-	else
-	{
-		return  reserved ;
-	}
+	reserved = (int32_t *) malloc(sizeof(char)*length);
+
+	return  reserved ;
+
 };
 
 

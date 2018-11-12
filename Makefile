@@ -72,13 +72,13 @@ ifeq ($(COURSE), COURSE1)
 COURSE1 = -DCOURSE1
 endif
 
-ifeq ($(DEBUG), ARAAY_DEBUG)
+ifeq ($(DEBUG), VERBOSE)
 DEBUG = -DVERBOSE
 endif
 
 TARGET = c1m3
 LDFLAGS = -Wl,-Map=$(TARGET).map $(LDFLAGS_ARCH)
-CFLAGS = $(CFLAGS_ARCH) $(INCLUDES) $(COURSE1)  -Wall -Werror -g -O0  -std=c99 $(CPPFLAGS)
+CFLAGS = $(CFLAGS_ARCH) $(INCLUDES) $(COURSE1) -DVERBOSE  -Wall -Werror -g -O0  -std=c99 $(CPPFLAGS)
  
 
 

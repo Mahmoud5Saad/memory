@@ -63,15 +63,19 @@ uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base)
 int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base)
 {
 	int32_t num = 0;
+	int32_t sign = 1;
  	int i = 0;
  
-	// run till we have reached end of the string or
-	// current character is non-numeric
-	while (digits && (digits >= '0' && digits <= '9'))
+	if (*ptr == '-')
 	{
-		num = num * 10 + (digits - '0');
+		sign = -1;
 		i++;
 	}
- 
-	return num;
+
+	for (; i < digits; i++)
+	{
+		num = num*10 + *(ptr + i) - '0';
+	}
+
+	return sign*num;
 }
